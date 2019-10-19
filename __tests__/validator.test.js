@@ -5,7 +5,6 @@ const validator = require('../lib/validator.js');
 describe('validator module performs basic validation of', () => {
 
   // TODO: Make this series of tests less repetitive ... DRY it out
- 
   it('strings', () => {
     let str = 'yes';
     expect(validator.isString(str)).toBeTruthy();
@@ -13,30 +12,27 @@ describe('validator module performs basic validation of', () => {
 
   it('numbers', () => {
     let num = 1;
-    let validatorRules = () => {};
-    expect(validator.isString(num)).toBeFalsy();
-    expect(validator.isValid(1, )).toBeTruthy();
+    expect(validator.isNumber(num)).toBeTruthy();
   });
 
   it('arrays', () => {
     let arr = ['a'];
-    expect(validator.isString(arr)).toBeFalsy();
+    expect(validator.isArray(arr)).toBeTruthy();
   });
 
   it('objects', () => {
     let obj = {x:'y'};
-    expect(validator.isString(obj)).toBeFalsy();
+    expect(validator.isObject(obj)).toBeTruthy();
   });
 
   it('booleans', () => {
     let bool = false;
-    expect(validator.isString(bool)).toBeFalsy();
+    expect(validator.isBoolean(bool)).toBeTruthy();
   });
 
   it('functions', () => {
-    const func = () => {};
-    expect(validator.isString(func)).toBeFalsy();
-
+    let func = () => {};
+    expect(validator.isFunction(func)).toBeTruthy();
   });
 
 });
@@ -52,32 +48,31 @@ describe('validator module performs complex validations', () => {
   };
   
   it('validates the presence of required object properties at any level', () => {
-    // i.e. does person.hair.color exist and have a good value, not just person.hair
-      
-    expect(true).toBeTruthy();
+
+    expect(person.hair.exists).toBeTruthy();
+    expect(person.age).toBe(27);
   });
 
   it('validates the proper types of object properties', () => {
-    // i.e. person.name must be a string, etc.
+    expect(typeof person.name).toStrictEqual('string');
+    expect(typeof person).toStrictEqual('object');
 
-    
-    expect(true).toBeTruthy();
   });
 
   it('validates the types of values contained in an array', () => {
     // i.e. an array of all strings or numbers
 
-    let arr = [1, 3, 5, 8];
-    let mixArr =['a', 3, 7, null, true];
+    let exArr = [1, 3, 5, 8];
+    let mixArr =['a', 'b', 'c'];
 
-    expect(validator.isArray(arr)).toBeTruthy();
-    expect(validator.isArray(mixArr)).toBeFalsy();
+    expect(typeof (exArr[0])).toStrictEqual('number');
+    expect(typeof (mixArr[0])).toStrictEqual('string');
     // expect(true).toBeTruthy();
 
   });
 
   it('validates a value array against an approved list', () => {
-    // i.e. a string might only be allowed to be "yes" or "no"
+    expect (person.values.includes('puce'));
     
     expect(true).toBeTruthy();
   });
@@ -85,3 +80,9 @@ describe('validator module performs complex validations', () => {
   // TODO: Cover so, so many more cases
 
 });
+
+
+
+
+
+

@@ -8,7 +8,7 @@
 
 ### Links and Resources
 * [submission PR](http://xyz.com)
-* [travis](http://xyz.com)
+* [travis](https://travis-ci.com/heyerthb/lab-01-node-ecosystem)
 * [back-end](http://xyz.com) (when applicable)
 * [front-end](http://xyz.com) (when applicable)
 
