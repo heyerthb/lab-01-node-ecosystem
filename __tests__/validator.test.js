@@ -72,9 +72,7 @@ describe('validator module performs complex validations', () => {
   });
 
   it('validates a value array against an approved list', () => {
-    expect (person.values.includes('puce'));
-    
-    expect(true).toBeTruthy();
+    expect (person.hair.color.includes('puce'));
   });
 
   // TODO: Cover so, so many more cases

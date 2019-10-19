@@ -7,8 +7,9 @@
 ### Author: Student/Group Name
 
 ### Links and Resources
-* [submission PR](http://xyz.com)
+* [submission PR](https://github.com/heyerthb/lab-01-node-ecosystem/compare/testing?expand=1)
 * [travis](https://travis-ci.com/heyerthb/lab-01-node-ecosystem)
+* [heroku](https://dashboard.heroku.com/apps/heyert-lab-01)
 * [back-end](http://xyz.com) (when applicable)
 * [front-end](http://xyz.com) (when applicable)
 
